@@ -31,12 +31,3 @@ function displayInput() {
 $("#submit").click(function() {
     displayInput();
 });
-
-
-
-// let firstName = document.getElementById("firstname");
-// let lastName = document.getElementById("lastname");
-// let email = document.getElementById("email");
-// let password = document.getElementById("password");
-// let password_verify = document.getElementById("password_verify");let telephone = document.getElementById("tel");
-// let comments = document.getElementById("comments");
