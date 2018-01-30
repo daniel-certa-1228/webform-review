@@ -1,9 +1,26 @@
 "use strict";
 // console.log('Hello');
-
 $("form").submit(function(event) {
     event.preventDefault()
 });
+
+function clearInput() {
+    $("#firstname").val("");
+    $("#lastname").val("");
+    $("#email").val("");
+    $("#password").val("");
+    $("#password_verify").val("");
+    $("#tel").val("");
+    $("#comments").val("");
+}
+
+function validate(password, password_verify) {
+    if ((password === password_verify) && (password !== "")) {
+        return true;
+    }  else  {
+        return false;
+    }
+}
 
 function displayInput() {
     let firstname = $("#firstname").val();
@@ -28,6 +45,12 @@ function displayInput() {
     $("#display").html(output);
 }
 
+
 $("#submit").click(function() {
-    displayInput();
+    if (validate($("#password").val(),$("#password_verify").val())) {
+        displayInput();
+        clearInput();
+    }  else  {
+        $("#flash").html("<h3>Both password fields should be filled in correctly.</h3>")
+    }
 });
